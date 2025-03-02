@@ -18,12 +18,12 @@ public class MaxProduct {
         Stack<Integer> stack = new Stack<>();
 
         // finding the left special values
-        for(int i = 0; i < n; i++){
-            while(!stack.isEmpty() && A.get(stack.peek()) <= A.get(i)){
+        for (int i = 0; i < n; i++) {
+            while (!stack.isEmpty() && A.get(stack.peek()) <= A.get(i)) {
                 stack.pop();
             }
 
-            if(!stack.isEmpty()){
+            if (!stack.isEmpty()) {
                 leftSpecial.set(i, stack.peek());
             }
 
@@ -34,12 +34,12 @@ public class MaxProduct {
         stack.clear();
 
         // finding the right special values
-        for(int i = n - 1; i >= 0; i--){
-            while(!stack.isEmpty() && A.get(stack.peek()) <= A.get(i)){
+        for (int i = n - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && A.get(stack.peek()) <= A.get(i)) {
                 stack.pop();
             }
 
-            if(!stack.isEmpty()){
+            if (!stack.isEmpty()) {
                 leftSpecial.set(i, stack.peek());
             }
 
@@ -48,14 +48,12 @@ public class MaxProduct {
 
         // finding the maxproduct
         long maxproduct = 0;
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             long product = (long) leftSpecial.get(i) * rightSpecial.get(i);
             maxproduct = Math.max(maxproduct, product);
         }
 
         return (int) (maxproduct % mod);
-
-
 
     }
 }
