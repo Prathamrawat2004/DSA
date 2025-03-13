@@ -1,6 +1,7 @@
 package Backtrack;
 import java.util.*;
 
+// number can we repeated to form combinations
 public class CombinationSum {
     public ArrayList<ArrayList<Integer>> CombinationSum(ArrayList<Integer> A, int B){
         // resultant arraylist
