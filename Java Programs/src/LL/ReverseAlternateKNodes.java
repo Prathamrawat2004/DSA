@@ -19,6 +19,7 @@ public class ReverseAlternateKNodes {
 
         // intitializing pointers
         ListNode dummy = new ListNode(0);
+        dummy.next = A;
         ListNode curr = A, prev = dummy;
         int count = 0; // to count B nodes
 
