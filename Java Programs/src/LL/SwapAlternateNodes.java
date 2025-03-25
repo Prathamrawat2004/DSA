@@ -13,9 +13,10 @@ public class SwapAlternateNodes {
 
     public ListNode swapPairs(ListNode A) {
         // base condition
-        if (A.next == null)
+        if (A.next == null){
             return A; // only one node
-
+        }
+        
         // declaring pointers
         ListNode dummy = new ListNode(0);
         ListNode prev = dummy, curr = A;
