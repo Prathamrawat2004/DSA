@@ -72,6 +72,7 @@ public class BST {
             node.right = inserter(value, node.right);
         }
 
+        // by default height for leaf node will be 0
         node.height = Math.max(height(node.left), height(node.right)) + 1; // as just added one more node
 
         return node;
