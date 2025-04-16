@@ -1,3 +1,5 @@
+// Done
+
 package Trees.Questions;
 
 import Trees.Questions.BFS.TreeNode;
@@ -6,6 +8,7 @@ public class Cousin {
     public boolean isCousins(TreeNode root, int x, int y){
         TreeNode xx = findNode(root, x);
         TreeNode yy = findNode(root, y);
+
 
         return (
             (level(root, xx, 0) == level(root, yy, 0)) && (!isSibling(root, xx, yy))
@@ -48,9 +51,9 @@ public class Cousin {
         }
 
         // go left
-        int l = level(node.left, x, lev + 1);
-        if (l != 0) {
-            return l;
+        int left = level(node.left, x, lev + 1);
+        if (left != 0) {
+            return left; 
         }
 
         // go right

@@ -3,7 +3,7 @@ package Trees.Questions;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import Trees.Questions.BFS.TreeNode;;
+import Trees.Questions.BFS.TreeNode;
 
 public class IsSymmetric {
     public boolean isSymmetric(TreeNode root) {
