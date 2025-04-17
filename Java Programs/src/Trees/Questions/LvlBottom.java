@@ -1,3 +1,5 @@
+// Done
+
 package Trees.Questions;
 
 import java.util.ArrayList;
@@ -49,7 +51,7 @@ public class LvlBottom {
                 }
 
             }
-            result.add(0, currentLevel);
+            result.add(0, currentLevel); // or use Collections.reverse() after adding top down
         }
 
         return result;
