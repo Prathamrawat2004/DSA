@@ -16,7 +16,7 @@ public class AddingNums {
     public ListNode addTwoNumbers(ListNode A, ListNode B) {
         // base condition
         if (A == null && B == null) {
-            return 0; // nothing to sum up
+            return null; // nothing to sum up
         }
 
         // creating a resultant list

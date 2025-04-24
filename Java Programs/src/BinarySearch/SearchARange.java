@@ -34,7 +34,7 @@ public class SearchARange {
     }
 
     // function to return end
-    public int findStart(ArrayList<Integer> A, int B) {
+    public int findEnd(ArrayList<Integer> A, int B) {
         // using binary search
         int low = 0, high = A.size() - 1;
         int end = -1;
