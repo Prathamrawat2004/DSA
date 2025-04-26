@@ -1,3 +1,5 @@
+// Done
+
 package Trees.DFSQues;
 
 public class FindPath {
@@ -42,11 +44,13 @@ public class FindPath {
             return true;
         }
 
+        // check left subtree
         boolean left = helper(node.left, arr, index + 1);
         if (left) {
             return true;
         }
 
+        // go to right subtree
         return helper(node.right, arr, index + 1);
 
         // or u can write like below
