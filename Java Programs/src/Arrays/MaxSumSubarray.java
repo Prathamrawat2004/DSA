@@ -49,4 +49,40 @@ public class MaxSumSubarray {
         return result;
 
     }
+
+    // if negative elements are also allowed
+    public ArrayList<Integer> maxSetII(ArrayList<Integer> A) {
+        // modifying kadane's algorithm
+        int max_so_far = A.get(0);
+        int current_max = A.get(0);
+        int maxStart = 0, maxEnd = 0;
+        int start = 0;
+
+        // traversing the array given
+        for (int i = 1; i < A.size(); i++) {
+            if (current_max + A.get(i) < A.get(i)) {
+                current_max = A.get(i);
+                // refix the start pointer
+                start = i;
+            } else {
+                // or just add the number to previous sum to increase the sum
+                current_max += A.get(i);
+            }
+
+            if (current_max > max_so_far) {
+                max_so_far = current_max;
+                maxStart = start;
+                maxEnd = i;
+            }
+        }
+
+        // resultant arraylist
+        ArrayList<Integer> resultant = new ArrayList<>();
+
+        for (int j = maxStart; j <= maxEnd; j++) {
+            resultant.add(A.get(j));
+        }
+
+        return resultant;
+    }
 }
