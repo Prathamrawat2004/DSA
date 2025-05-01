@@ -1,4 +1,8 @@
+// Done
+
 package Trees.DFSQues;
+
+import java.util.ArrayList;
 
 public class KthSmallest {
     public class TreeNode {
@@ -25,7 +29,7 @@ public class KthSmallest {
         return helper(root, k).val;
     }
 
-    int count = 0;
+    int count = 0; // global count
 
     public TreeNode helper(TreeNode root, int k) {
         // base condition
@@ -48,5 +52,37 @@ public class KthSmallest {
 
         return helper(root.right, k);
 
+    }
+
+    // brute force approach
+    public int KthSmallestElementII(TreeNode root, int k) {
+        // base condition
+        if (root == null)
+            return -1;
+
+        // list to store the node values
+        ArrayList<Integer> inorderList = new ArrayList<>();
+
+        // helper function
+        inorderTraversal(root, inorderList);
+
+        return inorderList.get(k - 1); // 1 based indexing
+    }
+
+    // definition of helper function
+    public void inorderTraversal(TreeNode root, ArrayList<Integer> inorderList) {
+        // base condition
+        if (root == null) {
+            return;
+        }
+
+        // go towards left
+        inorderTraversal(root.left, inorderList);
+
+        // add current node
+        inorderList.add(root.val);
+
+        // go towards right
+        inorderTraversal(root.right, inorderList);
     }
 }
