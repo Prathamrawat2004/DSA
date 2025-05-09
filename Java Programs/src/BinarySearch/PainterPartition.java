@@ -23,7 +23,7 @@ public class PainterPartition {
         while (low <= high) {
             long mid = low + (high - low) / 2;
 
-            if (isPossible(A, B, C, mid)) {
+            if (isPossible(A, B, C, (int) mid)) {
                 result = mid;
                 high = mid - 1; // minimizing the time
             } else {

@@ -16,12 +16,12 @@ public class PowFunction {
             base = ((base % d) + d) % d;
         }
 
-        while (power > 0) {
-            if (power % 2 == 1) {
-                result = (result * base) % d;
+        while (pow > 0) {
+            if (pow % 2 == 1) {
+                pow = (result * base) % d;
             }
             base = (base * base) % d;
-            power /= 2;
+            pow /= 2;
         }
 
         return (int) (result + d) % d; // ensuring non-negative result
