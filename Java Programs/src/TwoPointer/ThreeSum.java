@@ -43,7 +43,7 @@ public class ThreeSum {
                 }
             }
 
-            return closestSum;
         }
+        return closestSum;
     }
 }
