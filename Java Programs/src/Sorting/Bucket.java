@@ -7,7 +7,7 @@ public class Bucket {
             return;
 
         // finding the min and max elements inside the array
-        int min = Integer.MIN_VALUE, max = Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
         for (int num : arr) {
             min = Math.min(min, num);
             max = Math.max(max, num);
@@ -15,7 +15,7 @@ public class Bucket {
 
         int n = arr.length;
         int bucketSize = Math.max(1, (max - min) / (n - 1)); // ensuring atleast 1 bucket size
-        int bucketCount = (max - min) / bucketSize + 1;
+        int bucketCount = ((max - min) / bucketSize) + 1;
 
         // creating buckets
         @SuppressWarnings("unchecked")
