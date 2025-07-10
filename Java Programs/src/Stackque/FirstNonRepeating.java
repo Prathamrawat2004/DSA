@@ -1,8 +1,45 @@
 package Stackque;
 
+// revisions = 1
 import java.util.*;
 
 public class FirstNonRepeating {
+
+    // brute force solution
+    public String solve1(String A) {
+        StringBuilder B = new StringBuilder();
+
+        for (int i = 0; i < A.length(); i++) {
+            boolean found = false;
+
+            for (int j = 0; j <= i; j++) {
+                char ch = A.charAt(j);
+                if (countChar(A, j, i, ch) == 1) {
+                    B.append(ch);
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                B.append('#');
+            }
+        }
+
+        return B.toString();
+    }
+
+    // Count how many times 'ch' appears between index start to end
+    private int countChar(String A, int start, int end, char ch) {
+        int count = 0;
+        for (int k = start; k <= end; k++) {
+            if (A.charAt(k) == ch)
+                count++;
+        }
+        return count;
+    }
+
+    // optimized approach
     public String solve(String A) {
         // removing the leading and trailing spaces
         A = A.trim();

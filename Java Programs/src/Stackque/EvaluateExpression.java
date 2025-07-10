@@ -1,8 +1,9 @@
 package Stackque;
-
+// revisions = 1
 import java.util.*;
 
 public class EvaluateExpression {
+    // both brute-force & optimized approach
     public int evalRPN(ArrayList<String> A) {
         // stack to store elements
         Stack<Integer> stack = new Stack<>();
