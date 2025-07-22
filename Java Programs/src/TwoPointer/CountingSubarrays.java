@@ -1,7 +1,7 @@
 package TwoPointer;
 
 import java.util.*;
-
+// revisions = 1
 public class CountingSubarrays {
     // brute force approach
     public int solve1(ArrayList<Integer> A, int B){
