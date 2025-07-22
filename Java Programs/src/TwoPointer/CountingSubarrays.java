@@ -3,11 +3,35 @@ package TwoPointer;
 import java.util.*;
 
 public class CountingSubarrays {
-    public int solve(ArrayList<Integer> A, int B) {
-        // base condition
-        if (A == null || A.size() == 0 || B == 0) {
-            return 0; // non-negative integer
+    // brute force approach
+    public int solve1(ArrayList<Integer> A, int B){
+        // getting the size of array
+        int n = A.size();
+        int count = 0;
+
+        for(int i = 0; i < n; i++){
+            // resetting the sum each time for every iteration
+            int sum = 0;
+            
+            for(int j = i; j < n; j++){
+                sum += A.get(j);
+
+                if(sum < B){
+                    count++;
+                }else{
+                    break;
+                }
+                
+            }
         }
+
+
+        return count;
+    }
+    
+    
+    // optimized approach
+    public int solve(ArrayList<Integer> A, int B) {
 
         // counting the number of subarrays
         int count = 0;

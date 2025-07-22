@@ -1,8 +1,34 @@
 package TwoPointer;
 
 import java.util.*;
-
+// revisions = 1
 public class Array3Pointers {
+    // brute force approach
+    public int minMax1(final ArrayList<Integer> A, final ArrayList<Integer> B, final ArrayList<Integer> C) {
+        int minResult = Integer.MAX_VALUE;
+
+        for (int i = 0; i < A.size(); i++) {
+            for (int j = 0; j < B.size(); j++) {
+                for (int k = 0; k < C.size(); k++) {
+                    int a = A.get(i);
+                    int b = B.get(j);
+                    int c = C.get(k);
+
+                    int currentMax = Math.max(
+                        Math.abs(a - b),
+                        Math.max(Math.abs(b - c), Math.abs(c - a))
+                    );
+
+                    minResult = Math.min(minResult, currentMax);
+                }
+            }
+        }
+
+        return minResult;
+    }
+
+
+    // optimized approach
     public int minMax(final ArrayList<Integer> A, final ArrayList<Integer> B, final ArrayList<Integer> C) {
         // base condition
         if (A.isEmpty() || B.isEmpty() || C.isEmpty()) {
