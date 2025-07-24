@@ -3,6 +3,30 @@ package TwoPointer;
 import java.util.*;
 
 public class DiffK {
+    // brute force approach
+    public int diffPossible1(ArrayList<Integer> A, int B){
+        // getting the size of arraylist
+        int n = A.size();
+
+        // base condition
+        if(n < 2){
+            return 0;
+        }
+
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                if(i != j && A.get(i) - A.get(j) == B){
+                    return 1;
+                }
+            }
+        }
+
+        // no difference possible
+        return 0;
+        
+    }
+    
+    // optimized approach
     public int diffPossible(ArrayList<Integer> A, int B) {
         // using sliding window approach
         int left = 0, right = 1;
