@@ -1,7 +1,7 @@
 package TwoPointer;
 
 import java.util.*;
-
+// revisions = 1
 public class DiffK {
     // brute force approach
     public int diffPossible1(ArrayList<Integer> A, int B){
@@ -25,7 +25,7 @@ public class DiffK {
         return 0;
         
     }
-    
+
     // optimized approach
     public int diffPossible(ArrayList<Integer> A, int B) {
         // using sliding window approach

@@ -1,7 +1,7 @@
 package LL;
 
 import java.util.*;
-
+// revisions = 1
 public class AddingNums {
     class ListNode {
         public int val;
@@ -13,50 +13,95 @@ public class AddingNums {
         }
     }
 
-    public ListNode addTwoNumbers(ListNode A, ListNode B) {
-        // base condition
-        if (A == null && B == null) {
-            return null; // nothing to sum up
+    // brute force approach
+    public ListNode addTwoNumbers1(ListNode A, ListNode B) {
+        // creating seperate arrays for both linked lists
+        ArrayList<Integer> A1 = new ArrayList<>();
+        ArrayList<Integer> B1 = new ArrayList<>();
+
+        // storing the values of list A
+        ListNode tempA = A;
+        while (tempA != null) {
+            A1.add(tempA.val);
+            tempA = tempA.next;
         }
 
-        // creating a resultant list
-        ListNode dummy = new ListNode(0);
-        ListNode current = dummy;
+        // storing the values of list B
+        ListNode tempB = B;
+        while (tempB != null) {
+            B1.add(tempB.val);
+            tempB = tempB.next;
+        }
 
-        // initializing pointers for addition
-        int carry = 0, sum = 0;
+        // adding two arrays
+        int i = A1.size() - 1;
+        int j = B1.size() - 1;
+        int carry = 0;
 
-        // already reversed nodes, no need to reverse
-        while (A != null || B != null) {
-            // getting the values
-            int x = (A != null) ? A.val : 0;
-            int y = (B != null) ? B.val : 0;
+        ArrayList<Integer> resultant = new ArrayList<>();
 
-            // adding them
-            sum = x + y + carry;
+        while (i >= 0 || j >= 0 || carry > 0) {
+            // starting with carry bit
+            int sum = carry;
 
-            // modifying the result list
-            current.next = new ListNode(sum % 10);
-            current = current.next;
+            // adding the element of A1
+            if (i >= 0) {
+                sum += A1.get(i);
+                i--;
+            }
 
-            // modifying carry bit
+            // adding the element of B1
+            if (j >= 0) {
+                sum += B1.get(j);
+                j--;
+            }
+
+            // adding in the resultant array
+            resultant.add(sum % 10);
+
+            // updating the carry bit
             carry = sum / 10;
 
-            // updating the values of A and B
-            if (A != null) {
-                A = A.next;
-            }
-            if (B != null) {
-                B = B.next;
-            }
         }
 
-        // if carry still has value
-        if (carry > 0) {
-            current.next = new ListNode(carry);
+        // creating a dummy node
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
+
+        for (int val : resultant) {
+            curr.next = new ListNode(resultant.get(val));
+            curr = curr.next;
         }
 
         return dummy.next;
 
     }
+
+    // optimized approach
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0); // Dummy node to build the result list
+        ListNode current = dummy;
+        int carry = 0;
+
+        while (l1 != null || l2 != null || carry != 0) {
+            int sum = carry;
+
+            if (l1 != null) {
+                sum += l1.val;
+                l1 = l1.next;
+            }
+
+            if (l2 != null) {
+                sum += l2.val;
+                l2 = l2.next;
+            }
+
+            carry = sum / 10;
+            current.next = new ListNode(sum % 10);
+            current = current.next;
+        }
+
+        return dummy.next;
+    }
+
 }
