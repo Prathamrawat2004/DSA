@@ -6,6 +6,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Arrays;
 
+// "Arrays.aslist()" while converting to list sees every object as seperate argument 
+// but when it comes to primitives it sees them as one argument
+
 public class FindPairsWithGivenSum {
     // Brute-force approach
     public List<List<Integer>> distinctPairs(int[] arr, int target) {
