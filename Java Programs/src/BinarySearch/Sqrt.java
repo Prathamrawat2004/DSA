@@ -1,6 +1,21 @@
 package BinarySearch;
-
+// revisions  = 1
 public class Sqrt {
+    // brute force approach
+    public int sqrt1(int A){
+        for(int i = 1; i <= A; i++){
+            if(i * i == A){
+                return i;
+            }else if(i * i > A){
+                return i - 1;
+            }
+        }
+
+        return 0; // for A == 0
+
+    }
+
+    // optimized approach
     public int sqrt(int A) {
         // base condition
         if (A == 0 || A == 1) {
