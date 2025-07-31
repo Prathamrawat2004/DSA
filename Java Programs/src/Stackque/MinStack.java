@@ -2,6 +2,7 @@ package Stackque;
 
 import java.util.*;
 
+// revisions = 1
 public class MinStack {
     // declaring main and min stacks
     Stack<Integer> stack;

@@ -1,8 +1,27 @@
 package Stackque;
 
 import java.util.*;
-
+// revisions = 1
 public class Parentheses {
+    // brute force solution
+    public int inValid1(String A) {
+        // removing the leading and trailing spaces
+        A = A.trim();
+
+        // for storing the previous state of the given string
+        String prev = "";
+
+        while (!A.equals(prev)) {
+            prev = A;
+
+            A = A.replace("()", "").replace("{}", "").replace("[]", "");
+        }
+
+        return A.isEmpty() ? 1 : 0;
+
+    }
+
+    // optimized solution
     public int inValid(String A) {
         // removing the leading & trailing spaces
         A = A.trim();
@@ -43,7 +62,6 @@ public class Parentheses {
 
         }
 
-        
         // if number(opening) > number(closing)
         return stack.isEmpty() ? 1 : 0;
     }
