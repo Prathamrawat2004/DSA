@@ -28,8 +28,10 @@ public class SimplifyDirectoryPath {
             }
         }
 
-        for (String part : path) {
-            absolute.append("/").append(part);
+        if (!path.isEmpty()) {
+            for (String part : path) {
+                absolute.append("/").append(part);
+            }
         }
 
         return absolute.length() == 0 ? "/" : absolute.toString();
