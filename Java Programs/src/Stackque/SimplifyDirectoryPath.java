@@ -3,6 +3,40 @@ package Stackque;
 import java.util.*;
 
 public class SimplifyDirectoryPath {
+    // brute force approach
+    public String simplifyPath1(String A) {
+        // removing the leading and trailing spaces
+        A = A.trim();
+        StringBuilder absolute = new StringBuilder();
+
+        // creating a List to simulate the stack like behavior
+        List<String> path = new ArrayList<>();
+
+        String[] parts = A.split("/");
+
+        for (String part : parts) {
+            if (part.equals(".") || part.equals("")) {
+                continue;
+            } else if (part.equals("..")) {
+                // remove the last added path
+                if (!path.isEmpty()) {
+                    path.remove(path.size() - 1);
+                }
+            } else {
+                // valid part
+                path.add(part);
+            }
+        }
+
+        for (String part : path) {
+            absolute.append("/").append(part);
+        }
+
+        return absolute.length() == 0 ? "/" : absolute.toString();
+
+    }
+
+    // optimized approach
     public String simplifyPath(String A) {
         // removing the leading and trailing spaces
         A = A.trim();
