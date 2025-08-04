@@ -1,7 +1,19 @@
 package TwoPointer;
 import java.util.*;
-
+// revisions = 1
 public class MergeSortedLists {
+    // brute force approach
+    public void merge1(ArrayList<Integer> a, ArrayList<Integer> b){
+        // adding the elements of B to A
+        for(int i = 0; i < b.size(); i++){
+            a.add(b.get(i));
+        }
+
+        // sorting the resultant 'A' list
+        Collections.sort(a);
+    }
+
+    // optimized approach
     public void merge(ArrayList<Integer> a, ArrayList<Integer> b){
         // getting the sizes of both lists
         int m = a.size();
