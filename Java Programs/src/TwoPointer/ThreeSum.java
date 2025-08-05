@@ -1,8 +1,42 @@
 package TwoPointer;
 
 import java.util.*;
-
+// revisions = 1
 public class ThreeSum {
+    // brute force approach
+    public int threeSumClosest1(ArrayList<Integer> A, int B) {
+        // size of the given arraylist
+        int n = A.size();
+
+        // base condition
+        if (n < 3) {
+            return 0;
+        }
+
+        // initial closest sum
+        int closestSum = A.get(0) + A.get(1) + A.get(2);
+
+        for (int i = 0; i < n - 2; i++) {
+            for (int j = i + 1; j < n - 1; j++) {
+                for (int k = j + 1; k < n; k++) {
+                    int currentSum = A.get(i) + A.get(j) + A.get(k);
+
+                    // checking if the currentsum is closer or earlier closest sum
+                    // can be both greater or smaller than B
+                    if (Math.abs(currentSum - B) < Math.abs(closestSum - B)) {
+                        // updating the closest sum
+                        closestSum = currentSum;
+                    }
+
+                }
+            }
+        }
+
+        return closestSum;
+    }
+
+    // optmized approach
+    // check triangles as well
     public int threeSumClosest(ArrayList<Integer> A, int B) {
         // getting the size
         int n = A.size();
