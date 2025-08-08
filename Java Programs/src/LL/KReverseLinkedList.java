@@ -1,7 +1,7 @@
 package LL;
 
 import java.util.*;
-
+// revisions = 1
 public class KReverseLinkedList {
     class ListNode {
         public int val;
@@ -13,6 +13,51 @@ public class KReverseLinkedList {
         }
     }
 
+    // brute force approach
+    public ListNode solve1(ListNode A, int B) {
+        // base condition
+        if (A == null || A.next == null || B == 0 || B == 1) {
+            return A;
+        }
+
+        // storing elements in an arraylist
+        ArrayList<Integer> values = new ArrayList<>();
+        ListNode temp = A;
+        while (temp != null) {
+            values.add(temp.val);
+            temp = temp.next;
+        }
+
+        // reversing values inside the list
+        for (int i = 0; i < values.size(); i += B) {
+            int left = i;
+            int right = (i + B - 1);
+
+            while (left < right) {
+                // swapping the elements
+                int temper = values.get(left);
+                values.set(left, values.get(right));
+                values.set(right, temper);
+
+                left++;
+                right--;
+            }
+        }
+
+        // rebuilding the linked list
+        ListNode newHead = new ListNode(values.get(0));
+        ListNode curr = newHead;
+
+        for (int i = 1; i < values.size(); i++) {
+            curr.next = new ListNode(values.get(i));
+            curr = curr.next;
+        }
+
+        return newHead;
+
+    }
+
+    // optimized approach
     public ListNode solve(ListNode A, int B) {
         // base condition
         if (A == null || A.next == null || B == 0) {
@@ -31,7 +76,7 @@ public class KReverseLinkedList {
             // setting the end
             for (int i = 0; i < B; i++) {
                 end = end.next;
-                if (end == null){
+                if (end == null) {
                     return dummy.next; // not enough nodes
                 }
             }

@@ -1,4 +1,6 @@
 package LL;
+// revisions = 1
+import java.util.ArrayList;
 
 public class Intersection {
     class ListNode {
@@ -11,6 +13,34 @@ public class Intersection {
         }
     }
 
+    // brute force approach
+    public ListNode getIntersectionNode1(ListNode a, ListNode b) {
+        // base condition
+        if (a == null || b == null) {
+            return null;
+        }
+
+        // for every node of 'a'
+        ListNode tempA = a;
+        while (tempA != null) {
+            // we will check every node of 'b'
+
+            ListNode tempB = b;
+            while (tempB != null) {
+                if (tempA == tempB) { // checking the referrence not the value of object
+                    return tempA; // found the intesecting node
+                }
+
+                tempB = tempB.next;
+            }
+
+            tempA = tempA.next;
+        }
+
+        return null;
+    }
+
+    // optimized approach
     public ListNode getIntersectionNode(ListNode a, ListNode b) {
         // if either of the list is null
         if (a == null || b == null) {
