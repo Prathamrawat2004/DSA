@@ -2,7 +2,7 @@ package Sorting;
 
 import java.util.Arrays;
 
-public class Kadane's {
+public class Kadane {
     public int Kadane(int[] arr){
         // pointer for recording the max sum
         int max_Sum_So_Far = arr[0];
