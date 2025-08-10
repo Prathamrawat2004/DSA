@@ -1,5 +1,5 @@
 package Sorting;
-
+// revisions = 1
 import java.util.Arrays;
 
 public class Selection {
@@ -9,7 +9,7 @@ public class Selection {
 
             // finding element with minIndex
             for (int j = i + 1; j < n; j++) {
-                if (arr[j] > arr[minIndex]) {
+                if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
 

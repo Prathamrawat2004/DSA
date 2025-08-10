@@ -1,4 +1,7 @@
 package LL;
+// revisions = 1
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class MergeSorted {
     class ListNode {
@@ -11,6 +14,45 @@ public class MergeSorted {
         }
     }
 
+    // brute force approach
+    public ListNode mergeTwoLists1(ListNode A, ListNode B) {
+        // base conditions
+        if (A == null)
+            return B;
+        if (B == null)
+            return A;
+
+        // creating an arraylist
+        ArrayList<Integer> sorted = new ArrayList<>();
+
+        ListNode tempA = A;
+        while (tempA != null) {
+            sorted.add(tempA.val);
+            tempA = tempA.next;
+        }
+
+        ListNode tempB = B;
+        while (tempB != null) {
+            sorted.add(tempB.val);
+            tempB = tempB.next;
+        }
+
+        // sorting the arraylist
+        Collections.sort(sorted);
+
+
+        // rebuilding the linkedlist
+        ListNode newHead = new ListNode(sorted.get(0));
+        ListNode curr = newHead;
+        for (int i = 1; i < sorted.size(); i++) {
+            curr.next = new ListNode(sorted.get(i));
+            curr = curr.next;
+        }
+
+        return newHead;
+    }
+
+    // optimized approach
     public ListNode mergeTwoLists(ListNode A, ListNode B) {
         // base condition
         if ((A == null || B == null) || (A == null) && (B == null)) {
