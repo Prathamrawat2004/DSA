@@ -1,4 +1,6 @@
 package LL;
+// revisions = 1
+import java.util.ArrayList;
 
 public class NodeFromMiddle {
     class ListNode {
@@ -9,6 +11,31 @@ public class NodeFromMiddle {
             val = x;
             next = null;
         }
+    }
+
+    // brute force approach
+    public int solve1(ListNode A, int B) {
+        // base condition
+        if (A == null || A.next == null) {
+            return -1;
+        }
+
+        // creating an arraylist to store the node's values
+        ArrayList<Integer> list = new ArrayList<>();
+
+        ListNode temp = A;
+        while (temp != null) {
+            list.add(temp.val);
+            temp = temp.next;
+        }
+
+        // B greater than middle
+        int middlePos = (list.size() / 2) + 1;
+        if (B >= middlePos) {
+            return -1;
+        }
+
+        return list.get((middlePos - B - 1));
     }
 
     public int solve(ListNode A, int B) {
