@@ -1,5 +1,5 @@
 package LL;
-
+// revisions = 1
 public class RemoveNthNodeFromEnd {
     class ListNode {
         public int val;
@@ -11,6 +11,7 @@ public class RemoveNthNodeFromEnd {
         }
     }
 
+    // optimized approach
     public ListNode RemoveNthNode(ListNode A, int B) {
         // base condition
         if (A == null || B == 0) {
