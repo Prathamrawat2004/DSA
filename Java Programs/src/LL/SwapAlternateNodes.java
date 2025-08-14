@@ -1,5 +1,5 @@
 package LL;
-
+// revisions = 1
 public class SwapAlternateNodes {
     class ListNode {
         public int val;
