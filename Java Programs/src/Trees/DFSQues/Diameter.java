@@ -1,5 +1,5 @@
 // Done
-// Rev count = 1
+// revisions = 1
 package Trees.DFSQues;
 
 public class Diameter {
