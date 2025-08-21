@@ -1,5 +1,5 @@
 // Done
-
+// revisions = 1
 package Trees.DFSQues;
 
 import java.util.LinkedList;
@@ -26,7 +26,7 @@ public class Flatten {
 
     }
 
-    // optimized apporach
+    // optimized approach
     public void flatten(TreeNode root) {
         TreeNode current = root;
         while (current != null) {
