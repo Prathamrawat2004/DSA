@@ -26,4 +26,26 @@ public class PowFunction {
 
         return (int) (result + d) % d; // ensuring non-negative result
     }
+
+    // method O(N)
+    // public static int power(int x, int y) {
+    // if (y == 0)
+    // return 1;
+    // if (y % 2 == 0)
+    // return power(x, y / 2) * power(x, y / 2);
+    // return x * power(x, y / 2) * power(x, y / 2);
+    // }
+
+    // method 3 O(logn)
+    // int fastPower(int x, int y) {
+    //     if (y == 0)
+    //         return 1;
+    //     int half = fastPower(x, y / 2);
+
+    //     if (y % 2 == 0)
+    //         return half * half;
+    //     else
+    //         return x * half * half;
+    // }
+
 }
