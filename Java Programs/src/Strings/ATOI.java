@@ -1,10 +1,12 @@
 package Strings;
-
+// revisions = 1
 public class ATOI {
     public int String(String A) {
         // removing the leading and trailing spaces
         A = A.trim();
 
+        if (A.length() == 0) return 0;
+        
         // getting the sign of number
         int i = 0;
         int sign = 1;
@@ -27,8 +29,9 @@ public class ATOI {
 
             // adding it to result
             result = result * 10 + digit;
+            i++;
         }
 
-        return result;
+        return result * sign;
     }
 }

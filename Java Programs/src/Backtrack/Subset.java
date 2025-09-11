@@ -1,5 +1,5 @@
 package Backtrack;
-
+// revisions = 1
 import java.util.*;
 
 public class Subset {
@@ -22,7 +22,7 @@ public class Subset {
         // adding the empty sublist + other from recursions
         resultant.add(new ArrayList<>(processed));
 
-        for (int i = 0; i < A.size(); i++) {
+        for (int i = index; i < A.size(); i++) {
             processed.add(A.get(i));
 
             // recursively adding other elements
