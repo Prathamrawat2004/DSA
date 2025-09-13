@@ -1,5 +1,5 @@
 package Strings;
-
+// revisions = 1
 public class AddBinary {
     public String add(String A, String B) {
         // removing the leading and trailing spaces

@@ -1,5 +1,5 @@
 package Strings;
-
+// revisions = 1
 public class IsPalindrome {
     public int isPalindrome(String A) {
         // removing the leading and trailing spaces
