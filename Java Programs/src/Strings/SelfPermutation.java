@@ -1,5 +1,5 @@
 package Strings;
-
+// revisions = 1
 import java.util.HashSet;
 
 public class SelfPermutation {

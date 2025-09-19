@@ -1,5 +1,5 @@
 package Strings;
-
+// revisions = 1
 public class MultiplyStrings {
     public String multiply(String A, String B) {
         // removing the leading and trailing spaces

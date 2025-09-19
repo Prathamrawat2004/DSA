@@ -1,38 +1,35 @@
 package Strings;
-
+// revisions = 1
 public class LengthOfLastWord {
+    public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
     public int lengthOfLastWord(final String A) {
         int length = 0;
+        int current = 0;
         int i = 0;
 
-        // calculating the length manually
         while (true) {
             try {
+                char c = A.charAt(i);
 
-                // accessing the character at index i
-                char ch = A.charAt(i);
+                if (c == ' ') {
+                    // word ended → reset current length
+                    current = 0;
+                } else {
+                    // building a word
+                    current++;
+                    length = current; // store latest word length
+                }
+
                 i++;
-
             } catch (StringIndexOutOfBoundsException e) {
+                // end reached
                 break;
             }
         }
 
-        // i contains the actual length of string
-        // setting it to last valid index
-        i--;
-
-        // ignoring the empty spaces
-        while (i >= 0 && A.charAt(i) == ' ') {
-            i--;
-        }
-
-        // calculating the actual length
-        while (i >= 0 && A.charAt(i) != ' ') {
-            length++;
-            i--;
-        }
-
         return length;
     }
+}
+
 }

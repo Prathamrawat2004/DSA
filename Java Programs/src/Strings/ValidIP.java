@@ -31,13 +31,13 @@ public class ValidIP {
             return;
         }
 
-        if (count >= 4 || index >= s.length()) {
+        if (count > 4 || index >= s.length()) {
             return;
         }
 
         // trying lengths 1, 2 and 3
         for (int i = 1; i <= 3; i++) {
-            if (index + i >= s.length())
+            if (index + i > s.length())
                 break; // ignore index out of bounds
 
             String part = s.substring(index, index + i);
@@ -48,7 +48,7 @@ public class ValidIP {
             }
 
             // recursively add the part
-            backTrack(s, index + i, current + part + '.', result, count);
+            backTrack(s, index + i, current + part + '.', result, count + 1);
 
         }
     }

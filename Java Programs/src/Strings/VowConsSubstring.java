@@ -1,5 +1,5 @@
 package Strings;
-
+// revisions = 1
 public class VowConsSubstring {
     public int solve(String A) {
         // removing the leading and trailing spaces

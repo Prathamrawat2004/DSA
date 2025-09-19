@@ -1,5 +1,5 @@
 package Strings;
-
+// revisions = 1
 public class ZigZag {
     public String convert(String A, int B) {
         // removing the leading and trailing spaces

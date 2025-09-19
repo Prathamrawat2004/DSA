@@ -1,4 +1,5 @@
 package Strings;
+// revisions = 1
 public class RemoveConsecutiveChars {
     public String solve(String A, int B) {
         // resultant string
