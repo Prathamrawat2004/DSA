@@ -2,7 +2,7 @@ package Arrays;
 
 import java.util.ArrayList;
 import java.util.*;
-
+// revisions = 1
 public class HotelBookings {
     public boolean hotel(ArrayList<Integer> arrivals, ArrayList<Integer> departures, int rooms){
         // getting the size of bookings

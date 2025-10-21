@@ -1,5 +1,5 @@
 package DynamicProgramming;
-
+// 1D dp hence used dp[n]
 public class FrogJump {
     // recursive solution
     public int frogJump1(int n, int[] h) {
@@ -36,11 +36,11 @@ public class FrogJump {
 
         // jump one step (from n - 1)(0 - based index)
         // calculating the energy
-        int oneStep = frogJump1(n - 1, h) + Math.abs(h[n] - h[n - 1]);
+        int oneStep = frogJump2(n - 1, h, dp) + Math.abs(h[n] - h[n - 1]);
 
         int twoStep = Integer.MAX_VALUE;
         if (n > 1) {
-            twoStep = frogJump1(n - 2, h) + Math.abs(h[n] - h[n - 2]);
+            twoStep = frogJump2(n - 2, h, dp) + Math.abs(h[n] - h[n - 2]);
         }
 
         // store the result in dp before returning
@@ -56,11 +56,11 @@ public class FrogJump {
         dp[0] = 0;
 
         for (int i = 1; i < n; i++) {
-            int oneStep = dp[i - 1] + Math.abs(h[n] - h[n - 1]);
+            int oneStep = dp[i - 1] + Math.abs(h[i] - h[i - 1]);
 
             int twoStep = Integer.MAX_VALUE;
             if (i > 1) {
-                twoStep = dp[i - 2] + Math.abs(h[n] - h[n - 2]);
+                twoStep = dp[i - 2] + Math.abs(h[i] - h[i - 2]);
             }
 
             dp[i] = Math.min(oneStep, twoStep);

@@ -1,5 +1,5 @@
 package Arrays;
-
+// revisions = 1
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -38,8 +38,8 @@ public class MaxUnsortSubarray {
 
         int minValue = Integer.MAX_VALUE, maxValue = Integer.MIN_VALUE;
         for (int j = start; j <= end; j++) {
-            minValue = Math.min(minValue, A.get(j));
-            maxValue = Math.min(maxValue, A.get(j));
+            minValue = Math.max(maxValue, A.get(j));
+            maxValue = Math.min(minValue, A.get(j));
         }
 
         // expanding the start
