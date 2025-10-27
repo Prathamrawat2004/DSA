@@ -1,7 +1,7 @@
 package Arrays;
 
 import java.util.*;
-
+// revisions = 1
 public class PickBothSides {
     public int solve(ArrayList<Integer> A, int B) {
         int leftSum = 0;
