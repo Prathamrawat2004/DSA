@@ -1,5 +1,5 @@
 package Arrays;
-
+// revisions = 1
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -41,8 +41,8 @@ public class SetMatrixZeros {
         int N = a.get(0).size();
 
         // creating arrays for specific rows & cols
-        boolean[] zeroRows = new boolean[2];
-        boolean[] zeroCols = new boolean[2];
+        boolean[] zeroRows = new boolean[M];
+        boolean[] zeroCols = new boolean[N];
 
         // marking the desired rows & cols with 0 element
         for (int i = 0; i < M; i++) {
