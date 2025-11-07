@@ -1,8 +1,9 @@
 package DynamicProgramming.LCS;
+// revisions = 1
 
 public class PrintLCS {
     // recursive solution
-    public String PrintSubstring(String s1, String s2, int n, int m) {
+    public String PrintSubsequence(String s1, String s2, int n, int m) {
         // base condition
         if (n == 0 || m == 0) {
             // empty string
@@ -11,18 +12,18 @@ public class PrintLCS {
 
         // if characters got matched
         if (s1.charAt(n - 1) == s2.charAt(m - 1)) {
-            return s1.charAt(n - 1) + PrintSubstring(s1, s2, n - 1, m - 1);
+            return s1.charAt(n - 1) + PrintSubsequence(s1, s2, n - 1, m - 1);
         }
 
         // we have two choices
-        String left = PrintSubstring(s1, s2, n - 1, m);
-        String right = PrintSubstring(s1, s2, n, m - 1);
+        String left = PrintSubsequence(s1, s2, n - 1, m);
+        String right = PrintSubsequence(s1, s2, n, m - 1);
 
         return (left.length() > right.length() ? left : right);
     }
 
     // memoization
-    public String PrintSubstring2(String s1, String s2, int n, int m, String[][] dp) {
+    public String PrintSequence2(String s1, String s2, int n, int m, String[][] dp) {
         // base condition
         if (n == 0 || m == 0) {
             return "";
@@ -35,19 +36,19 @@ public class PrintLCS {
 
         // if the characters got matched
         if (s1.charAt(n - 1) == s2.charAt(m - 1)) {
-            dp[n][m] = s1.charAt(n - 1) + PrintSubstring(s1, s2, n - 1, m - 1);
+            dp[n][m] = s1.charAt(n - 1) + PrintSequence2(s1, s2, n - 1, m - 1, dp);
         }
 
         // we have two choices
-        String left = PrintSubstring2(s1, s2, n - 1, m, dp);
-        String right = PrintSubstring2(s1, s2, n, m - 1, dp);
+        String left = PrintSequence2(s1, s2, n - 1, m, dp);
+        String right = PrintSequence2(s1, s2, n, m - 1, dp);
 
         return dp[n][m] = (left.length() > right.length() ? left : right);
 
     }
 
     // tabulation
-    public String PrintSubstring3(String s1, String s2, int n, int m) {
+    public String PrintSubsequence3(String s1, String s2, int n, int m) {
         // creating a string dp to store the values from start
         String[][] dp = new String[n + 1][m + 1];
 

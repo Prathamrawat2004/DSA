@@ -1,5 +1,5 @@
 package DynamicProgramming;
-
+// revisions = 1
 import java.util.Arrays;
 
 public class FrogKJumps {
@@ -58,11 +58,7 @@ public class FrogKJumps {
 
     // tabulation solution
     public int minEnergy3(int n, int[] height, int k) {
-        // base case
-        if (n == 0) {
-            return 0; // energy req to jump from 0 -> 0
-        }
-
+        
         // taking a dp array
         int[] dp = new int[n];
 
@@ -75,7 +71,6 @@ public class FrogKJumps {
                 if (i - j >= 0) {
                     int jump = dp[i - j] + Math.abs(height[i] - height[i - j]);
                     minSteps = Math.min(minSteps, jump);
-
                 }
             }
 

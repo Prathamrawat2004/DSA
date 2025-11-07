@@ -1,4 +1,5 @@
 package DynamicProgramming.KnapSackProblems;
+// revisions = 1
 
 public class EqualSumPartition {
     // recursive solution

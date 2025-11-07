@@ -1,5 +1,6 @@
 package DynamicProgramming.LCS;
 
+// revisions = 1
 public class ShortestCommonSuper {
     // recursive solution
     public static int scs(String X, String Y, int n, int m) {

@@ -1,5 +1,8 @@
 package DynamicProgramming.LCS;
+// revisions = 1
 
+// time-complexity - O(2^(m + n))
+// space-complexity - O(m + n)
 public class Algorithm {
     // recursive approach
     public static int lcs(String s1, String s2, int n, int m) {
@@ -17,6 +20,8 @@ public class Algorithm {
     }
 
     // memoization
+    // time-complexity - O(m * n)
+    // space-complexity - O(m * n)
     public static int lcs2(String s1, String s2, int n, int m, int[][] dp) {
         // base condition
         if (n == 0 || m == 0) {
@@ -37,6 +42,8 @@ public class Algorithm {
     }
 
     // tabulation
+    // time-complexity - O(m * n)
+    // space-complexity - O(m * n)
     public static int lcs3(String s1, String s2, int n, int m) {
         // dp array to store values
         int[][] dp = new int[n + 1][m + 1];

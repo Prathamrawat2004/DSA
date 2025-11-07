@@ -1,4 +1,5 @@
 package DynamicProgramming.LCS;
+// revisions = 1
 
 public class PrintSCS {
     // recursive solution
@@ -27,6 +28,7 @@ public class PrintSCS {
         if (s1.length() == 0) {
             return s2.substring(0, m);
         }
+
         if (s2.length() == 0) {
             return s1.substring(0, n);
         }

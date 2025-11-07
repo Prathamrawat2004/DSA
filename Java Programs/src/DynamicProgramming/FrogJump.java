@@ -1,5 +1,8 @@
 package DynamicProgramming;
+// revisions = 1
+
 // 1D dp hence used dp[n]
+// inside main function we will call frogJump(length - 1, h), so that inside function we are working with 0 based index
 public class FrogJump {
     // recursive solution
     public int frogJump1(int n, int[] h) {
@@ -48,6 +51,7 @@ public class FrogJump {
     }
 
     // tabulation
+    // here n -> length of array, which means ans = dp[n - 1], not dp[n]
     public int frogJump3(int n, int[] h) {
         // array to store the values
         int[] dp = new int[n];

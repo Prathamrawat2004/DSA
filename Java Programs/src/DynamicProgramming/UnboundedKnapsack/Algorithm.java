@@ -1,4 +1,5 @@
 package DynamicProgramming.UnboundedKnapsack;
+// revisions = 1
 
 // if the current element is not taken -> the element is processed
 // if the current element is taken -> the element is not processed
@@ -63,6 +64,7 @@ public class Algorithm {
                 }
             }
         }
+
         return dp[n][W];
     }
 }

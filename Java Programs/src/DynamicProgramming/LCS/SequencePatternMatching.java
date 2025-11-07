@@ -1,5 +1,5 @@
 package DynamicProgramming.LCS;
-
+// revisions = 1
 public class SequencePatternMatching {
     // recursive solution
     public static boolean isSubsequence(String s1, String s2, int n, int m) {

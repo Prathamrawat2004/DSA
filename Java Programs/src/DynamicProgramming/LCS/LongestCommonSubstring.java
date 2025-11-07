@@ -1,7 +1,10 @@
 package DynamicProgramming.LCS;
+// revisions = 1
 
 public class LongestCommonSubstring {
     // recursive solution
+    // time-complexity - O(3^(m + n))
+    // space-complexity - O(m + n)
     public int longestSubstring(String s1, String s2, int n, int m, int count) {
         // base condition
         if (n == 0 || m == 0) {
@@ -22,6 +25,8 @@ public class LongestCommonSubstring {
     }
 
     // memoization
+    // time-complexity - O(m * n)
+    // space-complexity - O(m * n)
     public int longestSubstring2(String s1, String s2, int n, int m, int[][] dp) {
         // base condition
         if (n == 0 || m == 0) {
@@ -48,6 +53,8 @@ public class LongestCommonSubstring {
     }
 
     // tabulation
+    // time-complexity - O(m * n)
+    // space-complexity - O(m * n)
     public int longestSubstring3(String s1, String s2, int n, int m) {
         // creating a dp array for storing the values at desired indices
         int[][] dp = new int[n + 1][m + 1];

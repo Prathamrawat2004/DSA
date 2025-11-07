@@ -1,4 +1,5 @@
 package DynamicProgramming.KnapSackProblems;
+// revisions = 1
 
 // 2D dp hence used dp[n + 1]
 // 0/1 knapsack problem
@@ -16,8 +17,8 @@ public class KnapsackProblem {
         }
 
         // else we have two choices
-        int include = val[n - 1] + knapsack(wt, val, W - wt[n - 1], n);
-        int exclude = knapsack(wt, val, W - wt[n - 1], n);
+        int include = val[n - 1] + knapsack(wt, val, W - wt[n - 1], n - 1);
+        int exclude = knapsack(wt, val, W, n - 1);
 
         return Math.max(include, exclude);
 
@@ -67,6 +68,7 @@ public class KnapsackProblem {
                 }
             }
         }
+
         return dp[n][W];
     }
 
