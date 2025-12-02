@@ -1,0 +1,7 @@
+In DP problems:
+
+If i, j represent lengths (like “first i elements” or “prefixes”),
+➤ we use dp of size [n+1][m+1], because we need to include the 0-length case too.
+
+If i, j represent actual indices in the array or string (0-based),
+➤ we use dp of size [n][m], because we only need valid indices from 0...n-1

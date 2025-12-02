@@ -8,7 +8,6 @@ import java.util.List;
 public class CycleDetectionDFS2 {
     private int numVertices1;
     private List<List<Integer>> adjList;
-
     public CycleDetectionDFS2(int numVertices) {
         this.numVertices1 = numVertices;
         adjList = new ArrayList<>();
