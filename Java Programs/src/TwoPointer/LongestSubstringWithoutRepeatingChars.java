@@ -1,11 +1,9 @@
 package TwoPointer;
-
+// revision = 1
 import java.util.*;
 
 public class LongestSubstringWithoutRepeatingChars {
     public int lengthOfLongestSubstring(String s) {
-        // removing the leading and trailing spaces
-        s = s.trim();
 
         // using the sliding window approach
         int left = 0, maxLength = 0;

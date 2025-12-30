@@ -1,5 +1,5 @@
 package BinarySearch;
-// revisions  = 1
+// revisions  = 2
 public class Sqrt {
     // brute force approach
     public int sqrt1(int A){

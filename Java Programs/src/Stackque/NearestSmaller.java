@@ -1,7 +1,7 @@
 package Stackque;
 
 import java.util.*;
-// revisions = 1
+// revisions = 2
 public class NearestSmaller {
     // brute force approach
     public ArrayList<Integer> prevSmaller1(ArrayList<Integer> A) {

@@ -1,9 +1,23 @@
 package Arrays;
-// revisions = 2
-import java.util.ArrayList;
+// revisions = 3
 import java.util.*;
 
 public class MergeOverlapIntervals {
+    class Interval {
+    int start;
+    int end;
+
+    Interval() {
+        start = 0;
+        end = 0;
+    }
+
+    Interval(int s, int e) {
+        start = s;
+        end = e;
+    }
+}
+
     public ArrayList<Interval> merge(ArrayList<Interval> intervals) {
         // getting the size of given intervals
         int n = intervals.size();

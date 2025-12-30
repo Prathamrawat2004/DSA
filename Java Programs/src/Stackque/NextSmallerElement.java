@@ -31,28 +31,26 @@ public class NextSmallerElement {
     }
 
     // optimized approach
-    public int[] nextSmallerElements(int[] arr) {
-        // resultant array
-        int[] result = new int[arr.length];
+    public int[] nextSmallerForward(int[] arr) {
 
-        // filling the current array with default values
+        int n = arr.length;
+        int[] result = new int[n];
         Arrays.fill(result, -1);
 
-        // implementing a stack
-        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>(); // stores indices
 
-        for (int i = arr.length - 1; i >= 0; i--) {
-            while (!stack.isEmpty() && stack.peek() >= arr[i]) {
-                stack.pop();
+        for (int i = 0; i < n; i++) {
+
+            // solve answers for elements waiting in stack
+            while (!stack.isEmpty() && arr[i] < arr[stack.peek()]) {
+                int top = stack.pop();
+                result[top] = arr[i];
             }
 
-            if (!stack.isEmpty()) {
-                result[i] = stack.peek();
-            }
-
-            stack.push(arr[i]);
+            stack.push(i);
         }
 
         return result;
     }
+
 }

@@ -1,5 +1,5 @@
 package Strings;
-
+// revisions = 1
 import java.util.Arrays;
 
 public class CheckAnagrams {
@@ -50,6 +50,6 @@ public class CheckAnagrams {
         Arrays.sort(s1);
         Arrays.sort(t1);
 
-        return Arrays.equals(s1, t1); // compares both object arrays & primitve arrays
+        return Arrays.equals(s1, t1); // compares both object arrays & primitive arrays
     }
 }
