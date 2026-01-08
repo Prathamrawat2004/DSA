@@ -1,4 +1,4 @@
-package Arrays;
+package BasicMaths;
 // to print all the prime numbers from 0 -> N
 
 import java.util.*;
