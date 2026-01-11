@@ -52,7 +52,7 @@ public class TopView {
         Queue<Pair> queue = new LinkedList<>();
         queue.offer(new Pair(root, 0));
 
-        // creating a map to store the bottommost node
+        // creating a map to store the topmost node
         // stores in sorted manner
         Map<Integer, Integer> map = new TreeMap<>();
 

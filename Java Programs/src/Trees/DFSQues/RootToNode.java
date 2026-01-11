@@ -23,46 +23,50 @@ public class RootToNode {
 
     }
 
-    public List<List<Integer>> rootToLeafPath(TreeNode root) {
+    // given the node present in the tree
+    // find the path from root -> node
+    // NOTE: path is always present & node is always present
+    public List<Integer> rootToNode(TreeNode root, int x) {
         // resultant list
-        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
 
         // base condition
         if (root == null) {
+            // empty list
             return result;
         }
 
-        List<Integer> currentPath = new ArrayList<>();
-
-        // helper function
-        helper(root, currentPath, result);
+        // helper function to generate the path
+        getPath(root, result, x);
 
         return result;
     }
 
     // definition of helper function
-    public void helper(TreeNode root, List<Integer> currentPath, List<List<Integer>> result) {
+    public boolean getPath(TreeNode node, List<Integer> result, int x) {
         // base condition
-        if (root == null) {
-            return;
+        if (node == null) {
+            return false;
         }
 
-        // add current node
-        currentPath.add(root.val);
+        // adding current node
+        result.add(node.val);
 
-        // leaf node
-        if (root.left == null && root.right == null) {
-            // add current path to the result
-            result.add(currentPath);
-        } else {
-            // go to left & right
-            helper(root.left, currentPath, result);
-            helper(root.right, currentPath, result);
+        if (node.val == x) {
+            return true;
         }
 
-        // backtrack to empty the currentPath arraylist
-        currentPath.remove(currentPath.size() - 1);
+        // go check left & right
+        boolean left = getPath(node.left, result, x);
+        boolean right = getPath(node.right, result, x);
 
+        if (left || right) {
+            return true;
+        }
+
+        // removing the last added node
+        result.remove(result.size() - 1);
+        return false;
     }
 
 }
